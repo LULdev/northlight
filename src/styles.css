@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #1e2029;
+  --color-surface: #262935;
+  --color-ink: #ffffff;
+  --color-muted: #a0a0a0;
+  --color-subtle: #7a7d8c;
+  --color-line: #33364b;
+  --color-sage: #917ae8;
+  --color-sage-fg: #ffffff;
+  --color-paper: #2c2f3c;
+  --color-accent: #ff3152;
+  --color-accent-fg: #ffffff;
+  --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-card:
+    0 3px 12px -1px rgba(7, 10, 25, 0.35),
+    0 22px 27px -20px rgba(7, 10, 25, 0.45);
+  --shadow-border:
+    0px 0px 0px 1px rgba(255, 255, 255, 0.06),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.35);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(145, 122, 232, 0.45),
+    0px 8px 18px -8px rgba(0, 0, 0, 0.45);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img.frame {
+    outline: 1px solid rgba(255, 255, 255, 0.08);
+    outline-offset: -1px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-sage) 40%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
